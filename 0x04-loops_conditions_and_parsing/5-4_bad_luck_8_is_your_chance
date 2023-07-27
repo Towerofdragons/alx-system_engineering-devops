@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Display numbers 1-10 with some differences using while and if statements
 
 i=1
 
