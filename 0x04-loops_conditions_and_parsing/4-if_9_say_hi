@@ -12,6 +12,6 @@ do
 			echo "Hi"
 		fi
 
-i=$(($i + 1))
+((i++))
 
 done

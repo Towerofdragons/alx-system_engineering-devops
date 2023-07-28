@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # A bash script displaying content of curr directory in a list format
 
-files=$(ls)
+files="$(ls)"
 
-for file in files
+for file in $files
 do
 
 res=$( echo "$file" | cut -d '-' -f2 )
-echo $res
+echo "$res"
 
 done

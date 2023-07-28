@@ -8,12 +8,12 @@ echo "Hour: 0"
 while true
 do
 	echo $m
-	m=$(($m+1))
+	((m++))
 
-	if [ $m -gt 59 ]
+	if [ "$m" -gt 59 ]
 	then
 		m=1
-		h=$(($h+1))
+		((h++))
 		echo "Hour: $h"
 	fi
 
