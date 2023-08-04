@@ -2,5 +2,5 @@
 # Edit hosts file to alias loopback and facebook.com to new ips
 
 cp /etc/hosts /etc/hosts.new
-echo -e "localhost	127.0.0.2\nfacebook.com	8.8.8.8" > /etc/hosts.new
+echo -e "localhost	127.0.0.2\nfacebook.com		8.8.8.8" > /etc/hosts.new
 cp -f ~/hosts.new /etc/hosts
