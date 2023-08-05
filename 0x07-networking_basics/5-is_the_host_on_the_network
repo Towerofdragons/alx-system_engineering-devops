@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Pings a valid IP 5 times
 
 if [ -z "$1" ]
 then
