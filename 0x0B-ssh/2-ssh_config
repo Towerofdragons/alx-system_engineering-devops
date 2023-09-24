@@ -1,0 +1,8 @@
+#Config server to no longer require passphrase
+Host *
+SendEnv LANG LC_*
+HashKnownHosts yes
+GSSAPIDelegateCredentials no
+GSSAPIAuthentication yes
+IdentityFile ~/.ssh/school
+PasswordAuthentication no
