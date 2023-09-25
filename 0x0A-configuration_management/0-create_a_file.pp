@@ -1,3 +1,4 @@
+# Adds a file with permissions, user and contents set
 file{ '/tmp/school':
 path    => '/tmp/school',
 mode    => '0744',
