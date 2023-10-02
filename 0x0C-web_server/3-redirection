@@ -1,22 +1,12 @@
 #!/usr/bin/env bash
-# Script that configures a new Ubuntu machine to respect above requirements
+#Configure nginx server to redirect
 
-cat <<EOL > /etc/nginx/sites-available/temporary_redirect
-server {
-    listen 80 default_server;
+sudo apt-get update
+sudo apt-get install -y nginx
 
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}
-EOL
+echo "Hello World!" | sudo tee /var/www/html/index.html
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 
-# Enable the temporary redirection configuration
-if [ ! -e /etc/nginx/sites-enabled/temporary_redirect ]; 
-then
-    ln -s /etc/nginx/sites-available/temporary_redirect /etc/nginx/sites-enabled/
-fi
+sudo sed -i "s#server_name _;#$string_for_replacement#"  /etc/nginx/sites-enabled/default
 
-sudo nginx -t && sudo service nginx reload
-
-sudo rm /etc/nginx/sites-available/temporary_redirect
+sudo service nginx restart
