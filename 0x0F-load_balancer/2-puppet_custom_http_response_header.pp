@@ -1,3 +1,4 @@
+#Configure custom header with puppet on nginx
 exec {'update':
   provide => shell,
   command => 'sudo apt-get update'
