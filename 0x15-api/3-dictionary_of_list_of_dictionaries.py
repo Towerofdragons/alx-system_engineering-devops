@@ -62,12 +62,3 @@ with open("todo_all_employees.json", "w") as f:
     # Dump dictionary into json and write to file
     f.write(json.dumps(employee_dict))
 
-"""
-{"ID":["All tasks in dictionaries "]}
-
-{
-    "usename"   : USERNAME,
-    "task"      : task.get("title")
-    "completed" : task.get("completed")
-}
-"""
