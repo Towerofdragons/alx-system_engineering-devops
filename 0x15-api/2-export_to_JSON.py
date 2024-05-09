@@ -2,7 +2,7 @@
 
 """
 Return information on specified employee TODO list.
-Uses Emplyee ID
+Extends task 0 to export data on one user into JSON format.
 """
 
 if __name__ == "__main__":
@@ -54,11 +54,11 @@ if __name__ == "__main__":
         employee_dict[str(e_ID)].append(task_dict)
     # print(employee_dict[str(e_ID)])
 
-# print("--complete list--")
-# print(employee_dict)
+    # print("--complete list--")
+    # print(employee_dict)
 
-# Open file
-with open(f"{e_ID}.json", "w") as f:
-    # Dump dictionary into json and write to file
-    f.write(json.dumps(employee_dict))
+    # Open file
+    with open(f"{e_ID}.json", "w") as f:
+        # Dump dictionary into json and write to file
+        f.write(json.dumps(employee_dict))
 

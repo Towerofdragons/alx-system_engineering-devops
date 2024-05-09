@@ -54,11 +54,11 @@ if __name__ == "__main__":
             employee_dict[str(e_ID)].append(task_dict)
         # print(employee_dict[str(e_ID)])
 
-# print("--complete list--")
-# print(employee_dict)
+    # print("--complete list--")
+    # print(employee_dict)
 
-# Open file
-with open("todo_all_employees.json", "w") as f:
-    # Dump dictionary into json and write to file
-    f.write(json.dumps(employee_dict))
+    # Open file
+    with open("todo_all_employees.json", "w") as f:
+        # Dump dictionary into json and write to file
+        f.write(json.dumps(employee_dict))
 
