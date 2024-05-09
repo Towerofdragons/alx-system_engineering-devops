@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Module contains function 'number_of_subscribers'
 Query Reddit API and return number of subscribers.
@@ -16,7 +15,7 @@ def number_of_subscribers(subreddit):
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     header = {"user-agent": "TestAgent1"}
-    response = requests.get(url, headers=header)
+    response = requests.get(url, headers=header, allow_redirects=False)
 
     if response.status_code != 200:
         return 0
