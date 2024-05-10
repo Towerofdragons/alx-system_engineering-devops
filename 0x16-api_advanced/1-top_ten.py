@@ -13,12 +13,14 @@ def top_ten(subreddit):
     If invalid subreddit given, print None;
     """
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
-    header = {"user-agent": "TestAgent1"}
-    response = requests.get(url, headers=header, allow_redirects=False)
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
+    header = {"user-agent": "TestAgent1"}
+    params = {"limit": 10}
+    response = requests.get(url, headers=header, params=params, allow_redirects=False)
+    #print(response)    
     if response.status_code != 200:
-        print(None)
+        print("None")
         return
 
     json = response.json()
