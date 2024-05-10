@@ -5,7 +5,7 @@ Query Reddit API and return number of subscribers.
 """
 
 import requests
-
+import sys
 
 def number_of_subscribers(subreddit):
     """
@@ -17,10 +17,11 @@ def number_of_subscribers(subreddit):
     header = {"user-agent": "TestAgent1"}
     response = requests.get(url, headers=header, allow_redirects=False)
 
-    if response.status_code != 200:
+    if response.status_code == 404:
         return 0
 
     json = response.json()
+    # print(json)
     return json.get('data').get('subscribers')
 
 # number_of_subscribers("kenya")
