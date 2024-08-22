@@ -10,4 +10,4 @@ if [ -z "$GUNICORN_PID" ]; then
 fi
 
 # Send the HUP signal to gracefully reload Gunicorn
-kill -HUP "$GUNICORN_PID"
+kill -SIGHUP "$GUNICORN_PID"
